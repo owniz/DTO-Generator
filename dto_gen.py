@@ -25,4 +25,5 @@ def generate_dto(indent, tag, pic, name):
 	return dto
 
 
-app.run(debug=True)
+if __name__ == '__main__':
+	app.run(debug=True)

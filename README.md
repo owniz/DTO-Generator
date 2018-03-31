@@ -1,2 +1,3 @@
 # DTO-Generator
-DTO generator for cobol
+
+A simple DTO generator for Cobol just for testing Flask.

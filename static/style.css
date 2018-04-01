@@ -69,12 +69,12 @@ h1 {
 }
 
 #contact-form .btn[type="submit"] {
-    background-color: #008CBA;
+    background-color: #4CAF50;
     float: right;
     margin-right: 10%;
 }
 
 #contact-form .btn[type="reset"] {
-    background-color: #4CAF50;
+    background-color: #008CBA;
     margin-right: 10%;
 }

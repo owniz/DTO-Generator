@@ -19,9 +19,9 @@ def dto_gen():
 
 
 def generate_dto(indent, tag, pic, name):
-	dto = ('{} FILLER' + ' '*24 + 'PIC X({:02d}) VALUE \'<{}>\'.\n').format(indent, len(tag)+2, tag.upper())
-	dto += ('{} WX-DTO{}' + ' '*(24-len(name)) + 'PIC X({:02d}) VALUE SPACES.\n').format(indent, name.upper(), int(pic))
-	dto += ('{} FILLER' + ' '*24 + 'PIC X({:02d}) VALUE \'</{}>\'.\n').format(indent, len(tag)+3, tag.upper())
+	dto = ('{} FILLER' + ' '*14 + 'PIC X({:02d}) VALUE \'<{}>\'.\n').format(indent, len(tag)+2, tag.upper())
+	dto += ('{} WX-DTO{}' + ' '*(14-len(name)) + 'PIC X({:02d}) VALUE SPACES.\n').format(indent, name.upper(), int(pic))
+	dto += ('{} FILLER' + ' '*14 + 'PIC X({:02d}) VALUE \'</{}>\'.\n').format(indent, len(tag)+3, tag.upper())
 	return dto
 
 

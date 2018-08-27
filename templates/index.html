@@ -28,38 +28,74 @@
 				});
 			});
 		</script>
+		<script type=text/javascript>
+			$(document).ready(function() {
+				$("#submit_btn_java").click(function() {
+					$.post({
+					    	url: '/dto_java',
+					    	data: $('form').serialize(),
+					    	success: function(data) {
+					        	$("#result_java").val($("#result").val() + data);
+					    	}
+					});
+					return false;
+				});
+			});
+		</script>
+		<script type=text/javascript>
+			$(document).ready(function() {
+				$("#clear_java").click(function() {
+					$("#result_java").val("");
+				});
+			});
+		</script>
 	</head>
 	<body>
-		<h1>DTO Generator</h1>
+		<h1>DTO Generator COBOL</h1>
 		<div id="container">
+			<div class="left">
+				<form id="contact-form" method="post">
+					<div class="form-control">
+			  			<select name="indent">
+			  			   <option value="" disabled selected>Indentation</option>
+						   <option value="05">05</option> 
+						   <option value="10">10</option> 
+						   <option value="15">15</option>
+						   <option value="20">20</option> 
+						</select><br>
+					</div>
+					<div class="form-control">
+		  				<input type="text" placeholder="Tag" name="tag" autocomplete="off"><br>
+		  			</div>
+		  			<div class="form-control">
+		  				<input id="number" type="number" placeholder="PIC" name="pic" autocomplete="off"><br>
+		  			</div>	
+		  			<div class="form-control">
+		  				<input type="text" placeholder="Name" name="name" autocomplete="off"><br>
+		  			</div>
+		  			<div class="form-control">
+	  					<input class="btn" id="clear" type="reset" value="Clear">
+		  				<input class="btn" id="submit_btn" type="submit" value="Submit">
+  					</div>
+				</form>
+			</div>
+			 <div class="right">
+				<textarea readonly id="result"></textarea>
+			</div>
+		</div>
+			<h1>DTO Generator Java</h1>
+			<div id="container">
 				<div class="left">
-					<form id="contact-form" method="post">
-						<div class="form-control">
-				  			<select name="indent">
-				  			   <option value="" disabled selected>Indentation</option>
-							   <option value="05">05</option> 
-							   <option value="10">10</option> 
-							   <option value="15">15</option>
-							   <option value="20">20</option> 
-							</select><br>
-						</div>
-						<div class="form-control">
-			  				<input type="text" placeholder="Tag" name="tag" autocomplete="off"><br>
-			  			</div>
+					<form id="contact-form-java" method="post">
 			  			<div class="form-control">
-			  				<input id="number" type="number" placeholder="PIC" name="pic" autocomplete="off"><br>
-			  			</div>	
-			  			<div class="form-control">
-			  				<input type="text" placeholder="Name" name="name" autocomplete="off"><br>
-			  			</div>
-			  			<div class="form-control">
-		  					<input class="btn" id="clear" type="reset" value="Clear">
-			  				<input class="btn" id="submit_btn" type="submit" value="Submit">
+		  					<input class="btn" id="clear_java" type="reset" value="Clear">
+			  				<input class="btn" id="submit_btn_java" type="submit" value="Submit">
 	  					</div>
+	  					<div class="right">
+	  						<h3>Write XML Tags</h3>
+							<textarea id="result_java" name="area"></textarea>
+						</div>
 					</form>
-				</div>
-				 <div class="right">
-					<textarea readonly id="result"></textarea>
 				</div>
 			</div>
 	<body>

@@ -23,7 +23,10 @@ label { width: 80px; }
 
 #contact-form input,   
 #contact-form select,   
-#contact-form textarea { 
+#contact-form textarea,
+#contact-form-java input,   
+#contact-form-java select,   
+#contact-form-java textarea { 
    width:90%;
    border: 0; 
    -moz-border-radius: 4px;  
@@ -54,27 +57,26 @@ label { width: 80px; }
     height: 300px;
 }
 
-h1 {
+h1, h3 {
    margin: 20px;
 }
 
-.btn {
-   
-}
-
-#contact-form .btn {
+#contact-form .btn,
+#contact-form-java .btn {
     color: #fff;
     display: inline-block;
     width: 40%;
 }
 
-#contact-form .btn[type="submit"] {
+#contact-form .btn[type="submit"],
+#contact-form-java .btn[type="submit"] {
     background-color: #4CAF50;
     float: right;
     margin-right: 10%;
 }
 
-#contact-form .btn[type="reset"] {
+#contact-form .btn[type="reset"],
+#contact-form-java .btn[type="reset"] {
     background-color: #008CBA;
     margin-right: 10%;
 }

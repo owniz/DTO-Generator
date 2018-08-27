@@ -51,10 +51,10 @@ def generate_dto_java(area):
 			result += '\tprivate String {:s};\n'.format(tag)
 
 	for tag in dto_tags:
-		result += '\n\n\tpublic String get{:s}() {}\n\t\treturn Utilidades.trim({:s});\n\t{}'.format(tag, unichr(123), tag, unichr(125))
+		result += '\n\n\tpublic String get{:s}() {}\n\t\treturn Utilidades.trim({:s});\n\t{}'.format(tag, chr(123), tag, chr(125))
 
 	for tag in dto_tags:
-		result += '\n\n\tpublic set{:s}(String {:s}) {}\n\t\tthis.{:s} =  {:s};\n\t{}'.format(tag, lower_one(tag), unichr(123), tag, tag, unichr(125))
+		result += '\n\n\tpublic set{:s}(String {:s}) {}\n\t\tthis.{:s} =  {:s};\n\t{}'.format(tag, lower_one(tag), chr(123), tag, tag, chr(125))
 
 	return result
 

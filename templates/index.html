@@ -3,7 +3,6 @@
 		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 		<title>DTO Generator</title>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script type="module" src="{{ url_for('static', filename='scripts/main.js') }}"></script>
 	</head>
 	<body>
 		<h1>DTO Generator COBOL</h1>
@@ -54,5 +53,8 @@
 				</div>
 			</form>
 		</div>
+
+		<script src="{{ url_for('static', filename='scripts/DtoSender.js') }}"></script>
+		<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
 	<body>
 </html>

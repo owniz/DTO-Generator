@@ -3,62 +3,16 @@
 		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 		<title>DTO Generator</title>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script type=text/javascript>
-			$(document).ready(function() {
-				$("#submit_btn").click(function() {
-					if(!$.isNumeric($('#number').val())) {
-						return false;
-					}
-
-					$.post({
-					    	url: '/dto_gen',
-					    	data: $('form').serialize(),
-					    	success: function(data) {
-					        	$("#result").val($("#result").val() + data);
-					    	}
-					});
-					return false;
-				});
-			});
-		</script>
-		<script type=text/javascript>
-			$(document).ready(function() {
-				$("#clear").click(function() {
-					$("#result").val("");
-				});
-			});
-		</script>
-		<script type=text/javascript>
-			$(document).ready(function() {
-				$("#submit_btn_java").click(function() {
-					$.post({
-					    	url: '/dto_java',
-					    	data: $('form').serialize(),
-					    	success: function(data) {
-					        	$("#result_java").val($("#result").val() + data);
-					    	}
-					});
-					return false;
-				});
-			});
-		</script>
-		<script type=text/javascript>
-			$(document).ready(function() {
-				$("#clear_java").click(function() {
-					$("#result_java").val("");
-				});
-			});
-		</script>
 	</head>
 	<body>
 		<h1>DTO Generator COBOL</h1>
-		<div id="container">
+		<div class="container">
 			<div class="left">
-				<form id="contact-form" method="post">
+				<form id="cobol-form" class="form" method="post">
 					<div class="form-control">
 			  			<select name="indent">
 			  			   <option value="" disabled selected>Indentation</option>
-						   <option value="05">05</option> 
+						   <option value="05">05</option>
 						   <option value="10">10</option> 
 						   <option value="15">15</option>
 						   <option value="20">20</option> 
@@ -74,29 +28,33 @@
 		  				<input type="text" placeholder="Name" name="name" autocomplete="off"><br>
 		  			</div>
 		  			<div class="form-control">
-	  					<input class="btn" id="clear" type="reset" value="Clear">
-		  				<input class="btn" id="submit_btn" type="submit" value="Submit">
+	  					<input class="btn clear" id="clear_cobol" type="reset" value="Clear">
+		  				<input class="btn submit" id="submit_cobol" type="button" value="Submit">
   					</div>
 				</form>
 			</div>
 			 <div class="right">
-				<textarea readonly id="result"></textarea>
+				<textarea readonly id="cobol_textarea"></textarea>
 			</div>
 		</div>
-			<h1>DTO Generator Java</h1>
-			<div id="container">
+
+		<h1>DTO Generator Java</h1>
+		<div>
+			<form id="java-form" class="container form" method="post">
 				<div class="left">
-					<form id="contact-form-java" method="post">
-			  			<div class="form-control">
-		  					<input class="btn" id="clear_java" type="reset" value="Clear">
-			  				<input class="btn" id="submit_btn_java" type="submit" value="Submit">
-	  					</div>
-	  					<div class="right">
-	  						<h3>Write XML Tags</h3>
-							<textarea id="result_java" name="area"></textarea>
-						</div>
-					</form>
+					<div class="form-control">
+						<input class="btn clear" type="reset" value="Clear">
+						<input class="btn submit" id="submit_java" type="button" value="Submit">
+					</div>
 				</div>
-			</div>
+
+				<div class="right">
+					<textarea id="java_textarea" name="area"></textarea>
+				</div>
+			</form>
+		</div>
+
+		<script src="{{ url_for('static', filename='scripts/DtoSender.js') }}"></script>
+		<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
 	<body>
 </html>

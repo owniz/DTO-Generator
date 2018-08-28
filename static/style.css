@@ -11,7 +11,7 @@ html, body {
     font-family: Calibri, Arial, san-serif;
 }
 
-#container {
+.container {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
@@ -21,12 +21,9 @@ html, body {
 
 label { width: 80px; }
 
-#contact-form input,   
-#contact-form select,   
-#contact-form textarea,
-#contact-form-java input,   
-#contact-form-java select,   
-#contact-form-java textarea { 
+.form input,   
+.form select,   
+.form textarea { 
    width:90%;
    border: 0; 
    -moz-border-radius: 4px;  
@@ -50,7 +47,8 @@ label { width: 80px; }
 }
 
 .right textarea {
-    border: 0; 
+    border: 0;
+    border-radius: 4px; 
    -moz-border-radius: 4px;  
    -webkit-border-radius: 4px;  
     width: 100%;
@@ -61,22 +59,19 @@ h1, h3 {
    margin: 20px;
 }
 
-#contact-form .btn,
-#contact-form-java .btn {
+.form .btn {
     color: #fff;
     display: inline-block;
     width: 40%;
 }
 
-#contact-form .btn[type="submit"],
-#contact-form-java .btn[type="submit"] {
+.form .btn.submit {
     background-color: #4CAF50;
     float: right;
     margin-right: 10%;
 }
 
-#contact-form .btn[type="reset"],
-#contact-form-java .btn[type="reset"] {
+.form .btn.clear {
     background-color: #008CBA;
     margin-right: 10%;
 }
